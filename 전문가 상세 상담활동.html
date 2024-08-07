@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+      ::-webkit-scrollbar {
+        display: none;
+      }
+
+      * {
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+      }
+
+      @layer components {
+        .button {
+          @apply bg-blue-600 h-12 rounded shadow text-white w-full flex items-center justify-center font-bold text-sm;
+        }
+
+        .button-outline {
+          @apply border border-blue-600 h-12 rounded shadow text-blue-600 w-full flex items-center justify-center font-bold text-sm;
+        }
+
+        .button-sm {
+          @apply px-3 py-1 h-8 flex justify-center items-center text-white font-medium bg-blue-600 rounded text-sm;
+        }
+
+        .button-sub {
+          @apply h-10 border border-black rounded shadow text-black w-full flex items-center justify-center text-sm;
+        }
+
+        .input {
+          @apply border border-gray-300 rounded w-full text-sm h-12 px-3;
+        }
+
+        .radio {
+          @apply h-5 w-5 border-2 border-gray-400 rounded-full bg-white  cursor-pointer;
+        }
+
+        .textarea {
+          @apply w-full border border-gray-300 rounded text-sm placeholder-neutral-400 p-2;
+        }
+
+        .select {
+          @apply h-12 border border-gray-300 rounded text-sm placeholder-neutral-400 pl-2 w-full;
+        }
+
+        .button-radio {
+          @apply px-3 py-2 text-sm inline-flex items-center justify-center text-gray-500 rounded-lg cursor-pointer border border-gray-300 hover:text-black hover:bg-blue-200 peer-checked:text-blue-600 peer-checked:border-blue-600 whitespace-nowrap;
+        }
+
+        .button-radio-selected {
+          @apply button-radio bg-blue-600 text-white border-blue-600;
+        }
+
+        .button-radio-checked {
+          @apply button-radio border-blue-500 bg-blue-100 text-blue-500;
+        }
+
+        .button-icon {
+          @apply flex justify-center items-center rounded-full w-8 h-8 bg-gray-100 text-gray-400;
+        }
+
+        .button-icon-selected {
+          @apply button-icon bg-blue-600 text-white font-bold;
+        }
+
+        .label {
+          @apply text-sm font-bold block;
+        }
+
+        .info {
+          @apply text-xs text-gray-400;
+        }
+
+        .description {
+          @apply text-sm text-gray-500;
+        }
+
+        .title {
+          @apply text-xl font-bold;
+        }
+
+        .topbar {
+          @apply bg-white h-14 items-center border-b flex font-bold text-lg relative;
+        }
+
+        .topbar-title {
+          @apply text-center w-full font-bold;
+        }
+
+        .tabbar {
+          @apply flex mt-4 font-bold text-center text-gray-400 text-sm;
+        }
+
+        .tabbar-tab {
+          @apply w-full pb-2 border-b whitespace-nowrap px-4;
+        }
+
+        .tabbar-tab-selected {
+          @apply w-full text-black pb-2 border-b-2 border-black whitespace-nowrap  px-4;
+        }
+
+        .badge {
+          @apply px-2 py-1 rounded-full bg-blue-100 text-xs text-blue-500 inline-block;
+        }
+        .badge-sub {
+          @apply px-2 py-1 rounded-full bg-red-100 text-xs text-red-500  inline-block;
+        }
+
+        .fixed-bottom {
+          @apply fixed bottom-0 w-full;
+        }
+
+        .fixed-button {
+          @apply fixed bottom-0 left-0 w-full font-bold flex justify-center items-center py-4 text-white bg-blue-600;
+        }
+
+        .hr {
+          @apply h-2 border-none bg-gray-100;
+        }
+
+        .notice {
+          @apply rounded w-full px-4 py-2 bg-blue-50 text-center text-blue-500 text-sm whitespace-nowrap;
+        }
+
+        .image-empty {
+          @apply rounded bg-gray-300 h-16 w-16 flex items-center justify-center text-xl font-bold text-white;
+        }
+
+        .unread {
+          @apply rounded-full flex text-right items-center justify-center w-5 h-5 bg-red-500 text-xs text-white font-bold;
+        }
+
+        .tag {
+          @apply text-sm rounded-full py-2 px-3 bg-gray-100 whitespace-nowrap;
+        }
+
+        .profile {
+          @apply w-14 h-14 rounded-full bg-gray-200 flex justify-center items-center font-bold text-white;
+        }
+
+        .splash {
+          @apply h-screen bg-blue-800 flex items-center justify-center text-3xl font-bold text-white;
+        }
+
+        .dot-selected {
+          @apply p-1 rounded-full bg-blue-600;
+        }
+
+        .dot {
+          @apply p-1 rounded-full bg-gray-300;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="topbar">
+      <button class="absolute p-4">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="gray"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="feather feather-arrow-left"
+        >
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+      </button>
+      <div class="topbar-title">이핑거 전문가</div>
+    </div>
+
+    <div class="tabbar">
+      <a href="" class="tabbar-tab-selected">전문가홈</a>
+      <a href="" class="tabbar-tab">정보</a>
+      <a href="" class="tabbar-tab">상담사례</a>
+      <a href="" class="tabbar-tab"
+        >후기
+        <span class="badge">55</span>
+      </a>
+    </div>
+
+    <div class="title p-4">
+      이핑거 전문가의 상담 활동을 <br />
+      확인하세요
+    </div>
+
+    <div class="mx-4 pt-2 pb-7 border-b">
+      <a href="#" class="flex items-center gap-1 mb-4 font-bold text-gray-800 text-sm">
+        해결사례 <span class="pl-1 text-gray-300">7</span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="lightgray"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="feather feather-chevron-right"
+        >
+          <polyline points="9 18 15 12 9 6" />
+        </svg>
+      </a>
+
+      <div class="flex gap-4 overflow-x-auto">
+        <div class="w-32 text-sm">
+          <div class="image-empty w-32">fingr</div>
+          <div class="text-gray-600 mt-2">[마약.대마/성공사례] 마약.대마 불송치(불기소) 혐의없음 !</div>
+        </div>
+        <div class="w-32 text-sm">
+          <div class="image-empty w-32">fingr</div>
+          <div class="text-gray-600 mt-2">[마약.대마/성공사례] 마약.대마 불송치(불기소) 혐의없음 !</div>
+        </div>
+        <div class="w-32 text-sm">
+          <div class="image-empty w-32">fingr</div>
+          <div class="text-gray-600 mt-2">[마약.대마/성공사례] 마약.대마 불송치(불기소) 혐의없음 !</div>
+        </div>
+      </div>
+    </div>
+    <div class="mx-4 pt-2 pb-7 border-b">
+      <a href="#" class="flex items-center gap-1 mb-4 font-bold text-gray-800 text-sm">
+        해결사례 <span class="pl-1 text-gray-300">7</span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="lightgray"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="feather feather-chevron-right"
+        >
+          <polyline points="9 18 15 12 9 6" />
+        </svg>
+      </a>
+
+      <div class="flex gap-4 overflow-x-auto">
+        <div class="w-32 text-sm">
+          <div class="image-empty w-32">fingr</div>
+          <div class="text-gray-600 mt-2">[마약.대마/성공사례] 마약.대마 불송치(불기소) 혐의없음 !</div>
+        </div>
+        <div class="w-32 text-sm">
+          <div class="image-empty w-32">fingr</div>
+          <div class="text-gray-600 mt-2">[마약.대마/성공사례] 마약.대마 불송치(불기소) 혐의없음 !</div>
+        </div>
+        <div class="w-32 text-sm">
+          <div class="image-empty w-32">fingr</div>
+          <div class="text-gray-600 mt-2">[마약.대마/성공사례] 마약.대마 불송치(불기소) 혐의없음 !</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="p-4">
+      <h3 class="mb-4 font-semibold">상담을 진행하고<br />문제를 해결하세요.</h3>
+      <div class="flex justify-between items-center w-full h-24 p-4 bg-gray-100">
+        <div class="text-gray-400 text-xs">
+          빠르고<br />부담없이<br />
+          상담하고<br />싶을 때
+        </div>
+        <div class="font-semibold text-gray-800 text-xs">
+          <div class="flex justify-center items-center text-gray-500">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="12"
+              height="12"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="lightgray"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="feather feather-clock"
+            >
+              <circle cx="12" cy="12" r="10" />
+              <polyline points="12 6 12 12 16 14" />
+            </svg>
+            내일 상담 가능
+          </div>
+          <div class="pt-1 text-sm text-center">15분 전화상담</div>
+          <div class="pt-1 text-center">20,000원</div>
+        </div>
+        <button class="button-sm text-xs">예약하기</button>
+      </div>
+
+      <div class="flex justify-between items-center w-full h-24 mt-4 p-4 bg-gray-100">
+        <div class="text-gray-400 text-xs">
+          직접<br />만나서<br />
+          상담하고<br />싶을 때
+        </div>
+        <div class="font-semibold text-gray-400 text-xs">
+          <div class="pt-1 text-sm text-center">30분 방문상담</div>
+          <div class="pt-1 text-center">50,000원</div>
+        </div>
+        <button class="button-sm text-xs bg-blue-400">예약하기</button>
+      </div>
+    </div>
+    <hr class="w-full h-2 bg-gray-200" />
+
+    <div class="p-4 mb-16">
+      <h3 class="mb-4 font-semibold">상담사무소에 오셔서<br />문제를 해결하세요.</h3>
+      <div class="flex gap-3 mt-3 text-gray-600 text-sm">
+        전문가사무소
+        <div class="">핑 거</div>
+      </div>
+      <div class="flex justify-between mt-1 text-gray-400 text-xs">
+        서울특별시 강남구 테헤란로11길 7(역삼동) 9층
+        <a href="/map" class="font-semibold text-gray-500">네이버 지도로 보기</a>
+      </div>
+      <img
+        class="w-full h-32 mt-4 mb-10 object-cover"
+        src="https://whvntffyxprmvalmnwnb.supabase.co/storage/v1/object/public/app/89c35b49-7969-4e4f-a048-2cad8f58a94a.png"
+      />
+    </div>
+
+    <div class="fixed-bottom flex p-2 gap-2 bg-white">
+      <button class="button-outline w-32">사무실 전화</button>
+      <button class="button">
+        상담예약하기
+        <div class="absolute right-3">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-chevron-right"
+          >
+            <polyline points="9 18 15 12 9 6" />
+          </svg>
+        </div>
+      </button>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+      ::-webkit-scrollbar {
+        display: none;
+      }
+
+      * {
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+      }
+
+      @layer components {
+        .button {
+          @apply bg-blue-600 h-12 rounded shadow text-white w-full flex items-center justify-center font-bold text-sm;
+        }
+
+        .button-outline {
+          @apply border border-blue-600 h-12 rounded shadow text-blue-600 w-full flex items-center justify-center font-bold text-sm;
+        }
+
+        .button-sm {
+          @apply px-3 py-1 h-8 flex justify-center items-center text-white font-medium bg-blue-600 rounded text-sm;
+        }
+
+        .button-sub {
+          @apply h-10 border border-black rounded shadow text-black w-full flex items-center justify-center text-sm;
+        }
+
+        .input {
+          @apply border border-gray-300 rounded w-full text-sm h-12 px-3;
+        }
+
+        .radio {
+          @apply h-5 w-5 border-2 border-gray-400 rounded-full bg-white  cursor-pointer;
+        }
+
+        .textarea {
+          @apply w-full border border-gray-300 rounded text-sm placeholder-neutral-400 p-2;
+        }
+
+        .select {
+          @apply h-12 border border-gray-300 rounded text-sm placeholder-neutral-400 pl-2 w-full;
+        }
+
+        .button-radio {
+          @apply px-3 py-2 text-sm inline-flex items-center justify-center text-gray-500 rounded-lg cursor-pointer border border-gray-300 hover:text-black hover:bg-blue-200 peer-checked:text-blue-600 peer-checked:border-blue-600 whitespace-nowrap;
+        }
+
+        .button-radio-selected {
+          @apply button-radio bg-blue-600 text-white border-blue-600;
+        }
+
+        .button-radio-checked {
+          @apply button-radio border-blue-500 bg-blue-100 text-blue-500;
+        }
+
+        .button-icon {
+          @apply flex justify-center items-center rounded-full w-8 h-8 bg-gray-100 text-gray-400;
+        }
+
+        .button-icon-selected {
+          @apply button-icon bg-blue-600 text-white font-bold;
+        }
+
+        .label {
+          @apply text-sm font-bold block;
+        }
+
+        .info {
+          @apply text-xs text-gray-400;
+        }
+
+        .description {
+          @apply text-sm text-gray-500;
+        }
+
+        .title {
+          @apply text-xl font-bold;
+        }
+
+        .topbar {
+          @apply bg-white h-14 items-center border-b flex font-bold text-lg relative;
+        }
+
+        .topbar-title {
+          @apply text-center w-full font-bold;
+        }
+
+        .tabbar {
+          @apply flex mt-4 font-bold text-center text-gray-400 text-sm;
+        }
+
+        .tabbar-tab {
+          @apply w-full pb-2 border-b whitespace-nowrap px-4;
+        }
+
+        .tabbar-tab-selected {
+          @apply w-full text-black pb-2 border-b-2 border-black whitespace-nowrap  px-4;
+        }
+
+        .badge {
+          @apply px-2 py-1 rounded-full bg-blue-100 text-xs text-blue-500 inline-block;
+        }
+        .badge-sub {
+          @apply px-2 py-1 rounded-full bg-red-100 text-xs text-red-500  inline-block;
+        }
+
+        .fixed-bottom {
+          @apply fixed bottom-0 w-full;
+        }
+
+        .fixed-button {
+          @apply fixed bottom-0 left-0 w-full font-bold flex justify-center items-center py-4 text-white bg-blue-600;
+        }
+
+        .hr {
+          @apply h-2 border-none bg-gray-100;
+        }
+
+        .notice {
+          @apply rounded w-full px-4 py-2 bg-blue-50 text-center text-blue-500 text-sm whitespace-nowrap;
+        }
+
+        .image-empty {
+          @apply rounded bg-gray-300 h-16 w-16 flex items-center justify-center text-xl font-bold text-white;
+        }
+
+        .unread {
+          @apply rounded-full flex text-right items-center justify-center w-5 h-5 bg-red-500 text-xs text-white font-bold;
+        }
+
+        .tag {
+          @apply text-sm rounded-full py-2 px-3 bg-gray-100 whitespace-nowrap;
+        }
+
+        .profile {
+          @apply w-14 h-14 rounded-full bg-gray-200 flex justify-center items-center font-bold text-white;
+        }
+
+        .splash {
+          @apply h-screen bg-blue-800 flex items-center justify-center text-3xl font-bold text-white;
+        }
+
+        .dot-selected {
+          @apply p-1 rounded-full bg-blue-600;
+        }
+
+        .dot {
+          @apply p-1 rounded-full bg-gray-300;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="topbar">
+      <button class="absolute p-4">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="gray"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="feather feather-arrow-left"
+        >
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+      </button>
+      <div class="topbar-title">결제하기</div>
+    </div>
+
+    <!-- List -->
+    <div class="bg-white">
+      <div class="cursor-pointer flex justify-between items-center px-4 pt-7">
+        <div>
+          <div class="text-lg font-bold">주문상품 총 1개</div>
+          <div class="text-blue-600 text-sm font-medium">전체 무료배송</div>
+        </div>
+      </div>
+      <div class="bg-white p-4 border-b">
+        <div class="font-bold">핑거 배송상품 1개</div>
+        <div class="flex mt-4 gap-4">
+          <div class="w-14 h-14 flex justify-center items-center font-bold text-white text-lg rounded bg-gray-300">fingr</div>
+          <div class="relative text-sm font-medium flex-1">
+            <div class="text-gray-400">핑거</div>
+            <div class="text-gray-600">핑거 레더 카드홀더 블랙</div>
+            <div class="text-gray-800 font-bold flex gap-2 items-center">198,000원<span class="font-medium text-gray-400">1개</span></div>
+          </div>
+        </div>
+        <div class="w-full mt-4 bg-stone-100 text-gray-500 font-medium rounded text-sm px-2 py-3">블랙 / Free</div>
+      </div>
+    </div>
+
+    <!-- Location -->
+    <div class="flex justify-between items-start px-4 py-5 border-b bg-white">
+      <div>
+        <div class="text-lg font-bold">배송지 정보</div>
+        <div class="text-gray-400 text-sm font-medium">배송지를 입력해주세요.</div>
+      </div>
+      <div class="text-xs text-blue-600 font-bold">입력하기</div>
+    </div>
+
+    <!-- Coupon / Point -->
+    <div class="px-4 py-7 bg-white border-b">
+      <div class="text-lg font-bold">쿠폰 / 포인트</div>
+      <div class="mt-6 flex flex-col gap-4">
+        <div class="w-full flex justify-between items-center gap-4">
+          <div class="flex-1 flex justify-between border-b py-3 font-medium text-sm">
+            <div class="text-gray-500">쿠폰</div>
+            <div class="text-gray-400 pr-2">전체 16장, 적용가능 9장</div>
+          </div>
+          <button class="whitespace-nowrap bg-white border rounded py-3 font-bold px-2 border-gray-800 text-sm">쿠폰 선택</button>
+        </div>
+        <div class="w-full flex justify-between items-center gap-4">
+          <div class="flex-1 flex justify-between border-b py-3 font-medium text-sm">
+            <div class="text-gray-500">포인트</div>
+            <div class="text-gray-400 pr-2">0 P</div>
+          </div>
+          <button class="whitespace-nowrap bg-white border rounded py-3 font-bold px-2 border-gray-400 text-gray-400 text-gray- text-sm">모두 사용</button>
+        </div>
+      </div>
+      <div class="info mt-2">
+        <div>잔여 포인트 : 0원</div>
+        <div>포인트는 구매금액의 최대 10%까지 사용 가능합니다.</div>
+      </div>
+    </div>
+
+    <!-- Total -->
+    <div class="border-b bg-white py-6 px-4 flex justify-between items-center text-xl">
+      <div class="font-bold">총 결제금액</div>
+      <div class="font-semibold text-blue-600">198,000원</div>
+    </div>
+    <div class="border-b bg-white py-6 px-4 flex flex-col gap-2 text-sm">
+      <div class="flex justify-between">
+        <div class="font-medium text-gray-400">총 상품금액</div>
+        <div class="font-semibold">329,000원</div>
+      </div>
+      <div class="flex justify-between">
+        <div class="font-medium text-gray-400">상품할인</div>
+        <div class="font-semibold">-131,000원</div>
+      </div>
+      <div class="flex justify-between">
+        <div class="font-medium text-gray-400">쿠폰/포인트 할인</div>
+        <div class="font-semibold">0원</div>
+      </div>
+      <div class="flex justify-between">
+        <div class="font-medium text-gray-400">배송비</div>
+        <div class="font-semibold">0원</div>
+      </div>
+    </div>
+
+    <!-- Methods -->
+    <div class="px-4 py-6 bg-white border-b">
+      <div class="text-lg font-bold">결제 방법</div>
+      <div class="flex gap-2 text-xs text-gray-400 items-center mt-6">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="18"
+          height="18"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="feather feather-alert-circle"
+        >
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="8" x2="12" y2="12"></line>
+          <line x1="12" y1="16" x2="12.01" y2="16"></line>
+        </svg>
+        토스로 1만원 이상 첫 결제시 2천원 캐시백
+      </div>
+      <div class="mt-4 flex justify-center items-center gap-1">
+        <button class="button-sub">토스 페이 결제</button>
+        <button class="button-sub">네이버 페이 결제</button>
+      </div>
+    </div>
+
+    <!-- Button -->
+    <div class="sticky bottom-0 bg-white px-4 py-3 border-t">
+      <button class="button">198,000원 주문하기</button>
+    </div>
+  </body>
+</html>

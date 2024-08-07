@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+      ::-webkit-scrollbar {
+        display: none;
+      }
+
+      * {
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+      }
+
+      @layer components {
+        .button {
+          @apply bg-blue-600 h-12 rounded shadow text-white w-full flex items-center justify-center font-bold text-sm;
+        }
+
+        .button-outline {
+          @apply border border-blue-600 h-12 rounded shadow text-blue-600 w-full flex items-center justify-center font-bold text-sm;
+        }
+
+        .button-sm {
+          @apply px-3 py-1 h-8 flex justify-center items-center text-white font-medium bg-blue-600 rounded text-sm;
+        }
+
+        .button-sub {
+          @apply h-10 border border-black rounded shadow text-black w-full flex items-center justify-center text-sm;
+        }
+
+        .input {
+          @apply border border-gray-300 rounded w-full text-sm h-12 px-3;
+        }
+
+        .radio {
+          @apply h-5 w-5 border-2 border-gray-400 rounded-full bg-white  cursor-pointer;
+        }
+
+        .textarea {
+          @apply w-full border border-gray-300 rounded text-sm placeholder-neutral-400 p-2;
+        }
+
+        .select {
+          @apply h-12 border border-gray-300 rounded text-sm placeholder-neutral-400 pl-2 w-full;
+        }
+
+        .button-radio {
+          @apply px-3 py-2 text-sm inline-flex items-center justify-center text-gray-500 rounded-lg cursor-pointer border border-gray-300 hover:text-black hover:bg-blue-200 peer-checked:text-blue-600 peer-checked:border-blue-600 whitespace-nowrap;
+        }
+
+        .button-radio-selected {
+          @apply button-radio bg-blue-600 text-white border-blue-600;
+        }
+
+        .button-radio-checked {
+          @apply button-radio border-blue-500 bg-blue-100 text-blue-500;
+        }
+
+        .button-icon {
+          @apply flex justify-center items-center rounded-full w-8 h-8 bg-gray-100 text-gray-400;
+        }
+
+        .button-icon-selected {
+          @apply button-icon bg-blue-600 text-white font-bold;
+        }
+
+        .label {
+          @apply text-sm font-bold block;
+        }
+
+        .info {
+          @apply text-xs text-gray-400;
+        }
+
+        .description {
+          @apply text-sm text-gray-500;
+        }
+
+        .title {
+          @apply text-xl font-bold;
+        }
+
+        .topbar {
+          @apply bg-white h-14 items-center border-b flex font-bold text-lg relative;
+        }
+
+        .topbar-title {
+          @apply text-center w-full font-bold;
+        }
+
+        .tabbar {
+          @apply flex mt-4 font-bold text-center text-gray-400 text-sm;
+        }
+
+        .tabbar-tab {
+          @apply w-full pb-2 border-b whitespace-nowrap px-4;
+        }
+
+        .tabbar-tab-selected {
+          @apply w-full text-black pb-2 border-b-2 border-black whitespace-nowrap  px-4;
+        }
+
+        .badge {
+          @apply px-2 py-1 rounded-full bg-blue-100 text-xs text-blue-500 inline-block;
+        }
+        .badge-sub {
+          @apply px-2 py-1 rounded-full bg-red-100 text-xs text-red-500  inline-block;
+        }
+
+        .fixed-bottom {
+          @apply fixed bottom-0 w-full;
+        }
+
+        .fixed-button {
+          @apply fixed bottom-0 left-0 w-full font-bold flex justify-center items-center py-4 text-white bg-blue-600;
+        }
+
+        .hr {
+          @apply h-2 border-none bg-gray-100;
+        }
+
+        .notice {
+          @apply rounded w-full px-4 py-2 bg-blue-50 text-center text-blue-500 text-sm whitespace-nowrap;
+        }
+
+        .image-empty {
+          @apply rounded bg-gray-300 h-16 w-16 flex items-center justify-center text-xl font-bold text-white;
+        }
+
+        .unread {
+          @apply rounded-full flex text-right items-center justify-center w-5 h-5 bg-red-500 text-xs text-white font-bold;
+        }
+
+        .tag {
+          @apply text-sm rounded-full py-2 px-3 bg-gray-100 whitespace-nowrap;
+        }
+
+        .profile {
+          @apply w-14 h-14 rounded-full bg-gray-200 flex justify-center items-center font-bold text-white;
+        }
+
+        .splash {
+          @apply h-screen bg-blue-800 flex items-center justify-center text-3xl font-bold text-white;
+        }
+
+        .dot-selected {
+          @apply p-1 rounded-full bg-blue-600;
+        }
+
+        .dot {
+          @apply p-1 rounded-full bg-gray-300;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="topbar">
+      <button class="absolute p-4">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="gray"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="feather feather-arrow-left"
+        >
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+      </button>
+      <div class="topbar-title">전문가 질문/답변</div>
+    </div>
+
+    <div class="px-4 mt-6 mb-4">
+      <div class="badge">재산범죄 · 형사기타</div>
+      <div class="title mt-1">
+        신발 사이즈를 잘못 골랐습니다<br />
+        어떻게 해야 하나요?
+      </div>
+      <div class="mt-4 mb-6 text-gray-500 text-base">제가 신발을 잘못 샀는데 사이즈가 맞지 않습니다. 어떻게 해야 하나요?</div>
+      <div class="flex mb-1 text-gray-400 text-xs">한 달 전 작성됨 . 조회수 229</div>
+
+      <div class="flex justify-between items-center mt-6 text-gray-400 text-xs">
+        <div class="flex gap-1 items-center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-smile"
+          >
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+            <line x1="9" y1="9" x2="9.01" y2="9"></line>
+            <line x1="15" y1="9" x2="15.01" y2="9"></line>
+          </svg>
+          저도 궁금해요 0
+        </div>
+        <div class="flex gap-4">
+          <div class="flex items-center gap-1">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="feather feather-star"
+            >
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+            즐겨찾기
+          </div>
+          <div class="flex items-center gap-1">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="feather feather-share"
+            >
+              <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
+              <polyline points="16 6 12 2 8 6"></polyline>
+              <line x1="12" y1="2" x2="12" y2="15"></line>
+            </svg>
+            공유
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="w-full p-4 bg-gray-200">
+      <div class="flex justify-between items-center gap-2 text-gray-700">
+        <div class="text-sm">전문가 답변 8개</div>
+        <button class="button-radio">
+          추천순
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="gray"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-chevron-down"
+          >
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+      </div>
+      <div class="mt-4 bg-white p-4 rounded-lg">
+        <a class="flex pb-3 border-b">
+          <div class="w-10 h-10 rounded-full bg-gray-300 flex justify-center items-center text-white font-bold">fingr</div>
+          <div class="ml-2">
+            <div class="flex items-center gap-1 pb-1 font-semibold text-gray-700 text-sm">
+              안준형 전문가
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="lightgray"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-chevron-right"
+              >
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </div>
+            <div class="text-gray-500 text-xs">전문가 그룹</div>
+          </div>
+        </a>
+
+        <div class="px-2 py-6 text-gray-500 text-base">정말 사이즈가 맞지 않다면 직원에게 교환을 요청해보세요</div>
+      </div>
+    </div>
+  </body>
+</html>

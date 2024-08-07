@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+      ::-webkit-scrollbar {
+        display: none;
+      }
+
+      * {
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+      }
+
+      @layer components {
+        .button {
+          @apply bg-blue-600 h-12 rounded shadow text-white w-full flex items-center justify-center font-bold text-sm;
+        }
+
+        .button-outline {
+          @apply border border-blue-600 h-12 rounded shadow text-blue-600 w-full flex items-center justify-center font-bold text-sm;
+        }
+
+        .button-sm {
+          @apply px-3 py-1 h-8 flex justify-center items-center text-white font-medium bg-blue-600 rounded text-sm;
+        }
+
+        .button-sub {
+          @apply h-10 border border-black rounded shadow text-black w-full flex items-center justify-center text-sm;
+        }
+
+        .input {
+          @apply border border-gray-300 rounded w-full text-sm h-12 px-3;
+        }
+
+        .radio {
+          @apply h-5 w-5 border-2 border-gray-400 rounded-full bg-white  cursor-pointer;
+        }
+
+        .textarea {
+          @apply w-full border border-gray-300 rounded text-sm placeholder-neutral-400 p-2;
+        }
+
+        .select {
+          @apply h-12 border border-gray-300 rounded text-sm placeholder-neutral-400 pl-2 w-full;
+        }
+
+        .button-radio {
+          @apply px-3 py-2 text-sm inline-flex items-center justify-center text-gray-500 rounded-lg cursor-pointer border border-gray-300 hover:text-black hover:bg-blue-200 peer-checked:text-blue-600 peer-checked:border-blue-600 whitespace-nowrap;
+        }
+
+        .button-radio-selected {
+          @apply button-radio bg-blue-600 text-white border-blue-600;
+        }
+
+        .button-radio-checked {
+          @apply button-radio border-blue-500 bg-blue-100 text-blue-500;
+        }
+
+        .button-icon {
+          @apply flex justify-center items-center rounded-full w-8 h-8 bg-gray-100 text-gray-400;
+        }
+
+        .button-icon-selected {
+          @apply button-icon bg-blue-600 text-white font-bold;
+        }
+
+        .label {
+          @apply text-sm font-bold block;
+        }
+
+        .info {
+          @apply text-xs text-gray-400;
+        }
+
+        .description {
+          @apply text-sm text-gray-500;
+        }
+
+        .title {
+          @apply text-xl font-bold;
+        }
+
+        .topbar {
+          @apply bg-white h-14 items-center border-b flex font-bold text-lg relative;
+        }
+
+        .topbar-title {
+          @apply text-center w-full font-bold;
+        }
+
+        .tabbar {
+          @apply flex mt-4 font-bold text-center text-gray-400 text-sm;
+        }
+
+        .tabbar-tab {
+          @apply w-full pb-2 border-b whitespace-nowrap px-4;
+        }
+
+        .tabbar-tab-selected {
+          @apply w-full text-black pb-2 border-b-2 border-black whitespace-nowrap  px-4;
+        }
+
+        .badge {
+          @apply px-2 py-1 rounded-full bg-blue-100 text-xs text-blue-500 inline-block;
+        }
+        .badge-sub {
+          @apply px-2 py-1 rounded-full bg-red-100 text-xs text-red-500  inline-block;
+        }
+
+        .fixed-bottom {
+          @apply fixed bottom-0 w-full;
+        }
+
+        .fixed-button {
+          @apply fixed bottom-0 left-0 w-full font-bold flex justify-center items-center py-4 text-white bg-blue-600;
+        }
+
+        .hr {
+          @apply h-2 border-none bg-gray-100;
+        }
+
+        .notice {
+          @apply rounded w-full px-4 py-2 bg-blue-50 text-center text-blue-500 text-sm whitespace-nowrap;
+        }
+
+        .image-empty {
+          @apply rounded bg-gray-300 h-16 w-16 flex items-center justify-center text-xl font-bold text-white;
+        }
+
+        .unread {
+          @apply rounded-full flex text-right items-center justify-center w-5 h-5 bg-red-500 text-xs text-white font-bold;
+        }
+
+        .tag {
+          @apply text-sm rounded-full py-2 px-3 bg-gray-100 whitespace-nowrap;
+        }
+
+        .profile {
+          @apply w-14 h-14 rounded-full bg-gray-200 flex justify-center items-center font-bold text-white;
+        }
+
+        .splash {
+          @apply h-screen bg-blue-800 flex items-center justify-center text-3xl font-bold text-white;
+        }
+
+        .dot-selected {
+          @apply p-1 rounded-full bg-blue-600;
+        }
+
+        .dot {
+          @apply p-1 rounded-full bg-gray-300;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="p-4 text-lg relative bg-white h-14 items-center border-b flex">
+      <div class="w-full font-bold">FINGR</div>
+      <div class="flex gap-4 items-center">
+        <button>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-search"
+          >
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="tabbar">
+      <a href="" class="tabbar-tab-selected">홈</a>
+      <a href="" class="tabbar-tab">전문가찾기</a>
+      <a href="" class="tabbar-tab">마켓</a>
+      <a href="" class="tabbar-tab">클래스</a>
+    </div>
+
+    <div class="p-4">
+      <div class="h-20 relative flex justify-center p-4 bg-gray-300 rounded-lg items-center font-bold text-white">
+        광고
+
+        <div class="absolute px-2 py-1 flex bottom-2 right-2 rounded-xl bg-gray-400 text-xs text-white">1/8</div>
+      </div>
+    </div>
+
+    <div class="p-4">
+      <div class="grid grid-cols-4 gap-4">
+        <a class="flex flex-col items-center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-clipboard"
+          >
+            <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+            <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+          </svg>
+          <div class="mt-2.5 text-xs">메뉴</div>
+        </a>
+        <a class="flex flex-col items-center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-home"
+          >
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+          </svg>
+          <div class="mt-2.5 text-xs">메뉴</div>
+        </a>
+        <a class="flex flex-col items-center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-home"
+          >
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+          </svg>
+          <div class="mt-2.5 text-xs">메뉴</div>
+        </a>
+        <a class="flex flex-col items-center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-home"
+          >
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+          </svg>
+          <div class="mt-2.5 text-xs">메뉴</div>
+        </a>
+        <a class="flex flex-col items-center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-home"
+          >
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+          </svg>
+          <div class="mt-2.5 text-xs">메뉴</div>
+        </a>
+        <a class="flex flex-col items-center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-home"
+          >
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+          </svg>
+          <div class="mt-2.5 text-xs">메뉴</div>
+        </a>
+        <a class="flex flex-col items-center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-home"
+          >
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+          </svg>
+          <div class="mt-2.5 text-xs">메뉴</div>
+        </a>
+        <a class="flex flex-col items-center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-home"
+          >
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+          </svg>
+          <div class="mt-2.5 text-xs">메뉴</div>
+        </a>
+      </div>
+    </div>
+
+    <div class="px-4 mt-10">
+      <div class="flex justify-between items-center">
+        <h2 class="font-semibold">핑거 커뮤니티에 물어보세요</h2>
+        <a class="flex">
+          <span class="text-xs text-blue-500"> 전체보기 </span>
+          <div class="text-blue-500">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="feather feather-chevron-right"
+            >
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="px-4 pt-1">
+      <div class="py-2.5 flex justify-between border-b">
+        <div class="w-72 text-xs">
+          <h3 class="pb-1.5 text-gray-400">얼마에요</h3>
+          <h4 class="pb-1.5">어플리케이션 만들고 싶은데</h4>
+          <p class="text-gray-500">어플리케이션 만들어서 사업하고 싶은데 가격이 얼마..</p>
+        </div>
+        <div class="w-12 h-12 mt-2 ml-2 flex justify-center items-center bg-gray-300 rounded-lg">
+          <div class="text-white">fingr</div>
+        </div>
+      </div>
+      <div class="py-2.5 flex justify-between border-b">
+        <div class="w-72 text-xs">
+          <h3 class="pb-1.5 text-gray-400">전문가찾아요</h3>
+          <h4 class="pb-1.5">어플리케이션 만들고 싶은데</h4>
+          <p class="text-gray-500">어플리케이션 만드는게 너무 어려워요, 도와주실 전문가…</p>
+        </div>
+        <div class="w-12 h-12 mt-2 flex justify-center items-center bg-gray-300 rounded-lg">
+          <div class="text-white">fingr</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="px-4 pt-12">
+      <h2 class="pt-1.5 font-semibold">지금 바로 원하는 서비스를 받아보세요!</h2>
+
+      <div class="flex gap-2 mt-2">
+        <button class="tag">💻 웹 개발의뢰하기</button>
+        <button class="tag">📱 나를 위한 고퀄 앱</button>
+      </div>
+    </div>
+
+    <div class="w-full mt-6 pl-4 pb-12 overflow-x-auto">
+      <div class="w-max flex gap-2">
+        <a class="w-36 flex-col items-center">
+          <div class="w-36 h-24 rounded-lg bg-gray-300 flex justify-center items-center text-white font-bold text-lg">fingr</div>
+          <h3 class="mt-2 text-xs">그림을 잘그리고 싶다.</h3>
+          <h4 class="mt-1 text-xs font-semibold">35,000원 ~</h4>
+        </a>
+        <a class="w-36 flex-col items-center">
+          <div class="w-36 h-24 rounded-lg bg-gray-300 flex justify-center items-center text-white font-bold text-lg">fingr</div>
+          <h3 class="mt-2 text-xs">운동을 잘하고 싶다.</h3>
+          <h4 class="mt-1 text-xs font-semibold">80,000원 ~</h4>
+        </a>
+        <a class="w-36 mr-3 flex-col items-center">
+          <div class="w-36 h-24 rounded-lg bg-gray-300 flex justify-center items-center text-white font-bold text-lg">fingr</div>
+          <h3 class="mt-2 text-xs">요리를 잘하고 싶다.</h3>
+          <h4 class="mt-1 text-xs font-semibold">80,000월 ~</h4>
+        </a>
+      </div>
+    </div>
+  </body>
+</html>

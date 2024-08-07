@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+      ::-webkit-scrollbar {
+        display: none;
+      }
+
+      * {
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+      }
+
+      @layer components {
+        .button {
+          @apply bg-blue-600 h-12 rounded shadow text-white w-full flex items-center justify-center font-bold text-sm;
+        }
+
+        .button-outline {
+          @apply border border-blue-600 h-12 rounded shadow text-blue-600 w-full flex items-center justify-center font-bold text-sm;
+        }
+
+        .button-sm {
+          @apply px-3 py-1 h-8 flex justify-center items-center text-white font-medium bg-blue-600 rounded text-sm;
+        }
+
+        .button-sub {
+          @apply h-10 border border-black rounded shadow text-black w-full flex items-center justify-center text-sm;
+        }
+
+        .input {
+          @apply border border-gray-300 rounded w-full text-sm h-12 px-3;
+        }
+
+        .radio {
+          @apply h-5 w-5 border-2 border-gray-400 rounded-full bg-white  cursor-pointer;
+        }
+
+        .textarea {
+          @apply w-full border border-gray-300 rounded text-sm placeholder-neutral-400 p-2;
+        }
+
+        .select {
+          @apply h-12 border border-gray-300 rounded text-sm placeholder-neutral-400 pl-2 w-full;
+        }
+
+        .button-radio {
+          @apply px-3 py-2 text-sm inline-flex items-center justify-center text-gray-500 rounded-lg cursor-pointer border border-gray-300 hover:text-black hover:bg-blue-200 peer-checked:text-blue-600 peer-checked:border-blue-600 whitespace-nowrap;
+        }
+
+        .button-radio-selected {
+          @apply button-radio bg-blue-600 text-white border-blue-600;
+        }
+
+        .button-radio-checked {
+          @apply button-radio border-blue-500 bg-blue-100 text-blue-500;
+        }
+
+        .button-icon {
+          @apply flex justify-center items-center rounded-full w-8 h-8 bg-gray-100 text-gray-400;
+        }
+
+        .button-icon-selected {
+          @apply button-icon bg-blue-600 text-white font-bold;
+        }
+
+        .label {
+          @apply text-sm font-bold block;
+        }
+
+        .info {
+          @apply text-xs text-gray-400;
+        }
+
+        .description {
+          @apply text-sm text-gray-500;
+        }
+
+        .title {
+          @apply text-xl font-bold;
+        }
+
+        .topbar {
+          @apply bg-white h-14 items-center border-b flex font-bold text-lg relative;
+        }
+
+        .topbar-title {
+          @apply text-center w-full font-bold;
+        }
+
+        .tabbar {
+          @apply flex mt-4 font-bold text-center text-gray-400 text-sm;
+        }
+
+        .tabbar-tab {
+          @apply w-full pb-2 border-b whitespace-nowrap px-4;
+        }
+
+        .tabbar-tab-selected {
+          @apply w-full text-black pb-2 border-b-2 border-black whitespace-nowrap  px-4;
+        }
+
+        .badge {
+          @apply px-2 py-1 rounded-full bg-blue-100 text-xs text-blue-500 inline-block;
+        }
+        .badge-sub {
+          @apply px-2 py-1 rounded-full bg-red-100 text-xs text-red-500  inline-block;
+        }
+
+        .fixed-bottom {
+          @apply fixed bottom-0 w-full;
+        }
+
+        .fixed-button {
+          @apply fixed bottom-0 left-0 w-full font-bold flex justify-center items-center py-4 text-white bg-blue-600;
+        }
+
+        .hr {
+          @apply h-2 border-none bg-gray-100;
+        }
+
+        .notice {
+          @apply rounded w-full px-4 py-2 bg-blue-50 text-center text-blue-500 text-sm whitespace-nowrap;
+        }
+
+        .image-empty {
+          @apply rounded bg-gray-300 h-16 w-16 flex items-center justify-center text-xl font-bold text-white;
+        }
+
+        .unread {
+          @apply rounded-full flex text-right items-center justify-center w-5 h-5 bg-red-500 text-xs text-white font-bold;
+        }
+
+        .tag {
+          @apply text-sm rounded-full py-2 px-3 bg-gray-100 whitespace-nowrap;
+        }
+
+        .profile {
+          @apply w-14 h-14 rounded-full bg-gray-200 flex justify-center items-center font-bold text-white;
+        }
+
+        .splash {
+          @apply h-screen bg-blue-800 flex items-center justify-center text-3xl font-bold text-white;
+        }
+
+        .dot-selected {
+          @apply p-1 rounded-full bg-blue-600;
+        }
+
+        .dot {
+          @apply p-1 rounded-full bg-gray-300;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="relative">
+      <div class="w-full h-60 bg-gray-300 text-white font-bold flex justify-center items-center text-5xl">fingr</div>
+
+      <button class="absolute top-4 left-4">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="white"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="feather feather-arrow-left"
+        >
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+      </button>
+      <div class="absolute top-4 right-4 text-white">
+        <button class="mr-2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-bookmark"
+          >
+            <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+          </svg>
+        </button>
+        <button>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-share-2"
+          >
+            <circle cx="18" cy="5" r="3"></circle>
+            <circle cx="6" cy="12" r="3"></circle>
+            <circle cx="18" cy="19" r="3"></circle>
+            <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+            <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+          </svg>
+        </button>
+      </div>
+
+      <div class="absolute bottom-4 left-4 bg-gray-500 px-2 py-1 rounded-full">
+        <div class="text-white text-sm">1 / 2</div>
+      </div>
+    </div>
+
+    <div class="absolute top-56 right-5">
+      <a href="/map" class="flex items-center justify-center w-10 h-10 rounded-full bg-white text-blue-600 shadow-lg">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="feather feather-map-pin"
+        >
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+          <circle cx="12" cy="10" r="3"></circle>
+        </svg>
+      </a>
+    </div>
+
+    <div class="px-4 pt-8 pb-12">
+      <div class="font-bold text-lg">스케줄청담</div>
+      <div class="pt-1 text-sm">청담 최대 규모 다이닝&라운지를 보유한 복합 문화공간</div>
+      <div class="pt-1 text-gray-500 text-sm">다이닝바·청담</div>
+      <div class="flex items-center mt-4">
+        <div class="font-semibold text-sm">점심 저녁 동일가 2 - 7만원</div>
+      </div>
+    </div>
+    <hr class="hr" />
+
+    <div class="tabbar">
+      <a href="/post" class="tabbar-tab-selected">홈</a>
+      <a href="/post" class="tabbar-tab">메뉴</a>
+      <a href="/post" class="tabbar-tab">사진</a>
+      <a href="/post" class="tabbar-tab">리뷰</a>
+    </div>
+
+    <div class="p-4">
+      <button class="flex justify-between w-full px-4 py-3 border rounded-lg">
+        <div class="flex items-center gap-2 font-semibold text-gray-900 text-sm">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-calendar"
+          >
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+          </svg>
+          내일(월) / 2명
+        </div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="feather feather-chevron-down"
+        >
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </button>
+
+      <div class="flex gap-1 mt-8 mb-8 overflow-x-auto">
+        <button class="button-radio" style="white-space: nowrap">오전 11:00</button>
+        <button class="button-radio" style="white-space: nowrap">오전 11:15</button>
+        <button class="button-radio" style="white-space: nowrap">오전 11:30</button>
+        <button class="button-radio" style="white-space: nowrap">오전 11:45</button>
+        <button class="button-radio" style="white-space: nowrap">오전 12:00</button>
+      </div>
+    </div>
+
+    <div class="sticky bottom-0 mt-40 flex items-center justify-between gap-4 p-4 bg-white">
+      <button>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="feather feather-phone"
+        >
+          <path
+            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+          ></path>
+        </svg>
+      </button>
+      <button class="button">예약하기</button>
+    </div>
+  </body>
+</html>

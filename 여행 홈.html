@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+      ::-webkit-scrollbar {
+        display: none;
+      }
+
+      * {
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+      }
+
+      @layer components {
+        .button {
+          @apply bg-blue-600 h-12 rounded shadow text-white w-full flex items-center justify-center font-bold text-sm;
+        }
+
+        .button-outline {
+          @apply border border-blue-600 h-12 rounded shadow text-blue-600 w-full flex items-center justify-center font-bold text-sm;
+        }
+
+        .button-sm {
+          @apply px-3 py-1 h-8 flex justify-center items-center text-white font-medium bg-blue-600 rounded text-sm;
+        }
+
+        .button-sub {
+          @apply h-10 border border-black rounded shadow text-black w-full flex items-center justify-center text-sm;
+        }
+
+        .input {
+          @apply border border-gray-300 rounded w-full text-sm h-12 px-3;
+        }
+
+        .radio {
+          @apply h-5 w-5 border-2 border-gray-400 rounded-full bg-white  cursor-pointer;
+        }
+
+        .textarea {
+          @apply w-full border border-gray-300 rounded text-sm placeholder-neutral-400 p-2;
+        }
+
+        .select {
+          @apply h-12 border border-gray-300 rounded text-sm placeholder-neutral-400 pl-2 w-full;
+        }
+
+        .button-radio {
+          @apply px-3 py-2 text-sm inline-flex items-center justify-center text-gray-500 rounded-lg cursor-pointer border border-gray-300 hover:text-black hover:bg-blue-200 peer-checked:text-blue-600 peer-checked:border-blue-600 whitespace-nowrap;
+        }
+
+        .button-radio-selected {
+          @apply button-radio bg-blue-600 text-white border-blue-600;
+        }
+
+        .button-radio-checked {
+          @apply button-radio border-blue-500 bg-blue-100 text-blue-500;
+        }
+
+        .button-icon {
+          @apply flex justify-center items-center rounded-full w-8 h-8 bg-gray-100 text-gray-400;
+        }
+
+        .button-icon-selected {
+          @apply button-icon bg-blue-600 text-white font-bold;
+        }
+
+        .label {
+          @apply text-sm font-bold block;
+        }
+
+        .info {
+          @apply text-xs text-gray-400;
+        }
+
+        .description {
+          @apply text-sm text-gray-500;
+        }
+
+        .title {
+          @apply text-xl font-bold;
+        }
+
+        .topbar {
+          @apply bg-white h-14 items-center border-b flex font-bold text-lg relative;
+        }
+
+        .topbar-title {
+          @apply text-center w-full font-bold;
+        }
+
+        .tabbar {
+          @apply flex mt-4 font-bold text-center text-gray-400 text-sm;
+        }
+
+        .tabbar-tab {
+          @apply w-full pb-2 border-b whitespace-nowrap px-4;
+        }
+
+        .tabbar-tab-selected {
+          @apply w-full text-black pb-2 border-b-2 border-black whitespace-nowrap  px-4;
+        }
+
+        .badge {
+          @apply px-2 py-1 rounded-full bg-blue-100 text-xs text-blue-500 inline-block;
+        }
+        .badge-sub {
+          @apply px-2 py-1 rounded-full bg-red-100 text-xs text-red-500  inline-block;
+        }
+
+        .fixed-bottom {
+          @apply fixed bottom-0 w-full;
+        }
+
+        .fixed-button {
+          @apply fixed bottom-0 left-0 w-full font-bold flex justify-center items-center py-4 text-white bg-blue-600;
+        }
+
+        .hr {
+          @apply h-2 border-none bg-gray-100;
+        }
+
+        .notice {
+          @apply rounded w-full px-4 py-2 bg-blue-50 text-center text-blue-500 text-sm whitespace-nowrap;
+        }
+
+        .image-empty {
+          @apply rounded bg-gray-300 h-16 w-16 flex items-center justify-center text-xl font-bold text-white;
+        }
+
+        .unread {
+          @apply rounded-full flex text-right items-center justify-center w-5 h-5 bg-red-500 text-xs text-white font-bold;
+        }
+
+        .tag {
+          @apply text-sm rounded-full py-2 px-3 bg-gray-100 whitespace-nowrap;
+        }
+
+        .profile {
+          @apply w-14 h-14 rounded-full bg-gray-200 flex justify-center items-center font-bold text-white;
+        }
+
+        .splash {
+          @apply h-screen bg-blue-800 flex items-center justify-center text-3xl font-bold text-white;
+        }
+
+        .dot-selected {
+          @apply p-1 rounded-full bg-blue-600;
+        }
+
+        .dot {
+          @apply p-1 rounded-full bg-gray-300;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="relative w-full h-80 bg-gray-400 flex justify-center items-center font-bold text-gray-300 text-4xl">
+      fingr
+      <div class="absolute bottom-3 left-4 w-full">
+        <div class="w-12 py-1 mb-2 rounded-full bg-red-600 text-white text-xs text-center">PICK</div>
+        <div class="text-gray-100 text-xs">우린 이걸 '힐링'이라고 부르기로 했어요</div>
+        <div class="text-white text-2xl">불멍 & 물멍 스팟</div>
+
+        <div class="flex justify-center gap-2 mt-10 mr-4">
+          <div class="dot"></div>
+          <div class="dot-selected"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="px-4 pt-6">
+      <h3 class="pb-4 font-semibold">어디로 가시나요?</h3>
+
+      <div class="flex gap-4 overflow-x-auto">
+        <a href="#" class="flex flex-col items-center justify-center gap-1 w-14 h-14 rounded-full bg-blue-100 text-blue-600 text-xs"
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="160"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-navigation"
+          >
+            <polygon points="3 11 22 2 13 21 11 13 3 11" /></svg
+          >주변검색</a
+        >
+
+        <div class="relative">
+          <a href="#">
+            <div class="flex flex-col items-center justify-center w-14 h-14 rounded-full bg-gray-500 text-white text-xs opacity-70">
+              <div>압구정/</div>
+              <div>청담</div>
+            </div>
+          </a>
+        </div>
+        <div class="relative">
+          <a href="#">
+            <div class="flex flex-col items-center justify-center w-14 h-14 rounded-full bg-gray-500 text-white text-xs opacity-70">
+              <div>이태원/</div>
+              <div>한남</div>
+            </div>
+          </a>
+        </div>
+        <div class="relative">
+          <a href="#">
+            <div class="flex flex-col items-center justify-center w-14 h-14 rounded-full bg-gray-500 text-white text-xs opacity-70">
+              <div>성수</div>
+            </div>
+          </a>
+        </div>
+        <div class="relative">
+          <a href="#">
+            <div class="flex flex-col items-center justify-center w-14 h-14 rounded-full bg-gray-500 text-white text-xs opacity-70">
+              <div>부산</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <h3 class="pt-8 pb-1 font-semibold">유저의 리얼리뷰 Pick</h3>
+      <div class="text-gray-500 text-xs">방문자들이 남긴 솔직한 리뷰를 만나보세요</div>
+    </div>
+  </body>
+</html>

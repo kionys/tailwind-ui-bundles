@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+      ::-webkit-scrollbar {
+        display: none;
+      }
+
+      * {
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+      }
+
+      @layer components {
+        .button {
+          @apply bg-blue-600 h-12 rounded shadow text-white w-full flex items-center justify-center font-bold text-sm;
+        }
+
+        .button-outline {
+          @apply border border-blue-600 h-12 rounded shadow text-blue-600 w-full flex items-center justify-center font-bold text-sm;
+        }
+
+        .button-sm {
+          @apply px-3 py-1 h-8 flex justify-center items-center text-white font-medium bg-blue-600 rounded text-sm;
+        }
+
+        .button-sub {
+          @apply h-10 border border-black rounded shadow text-black w-full flex items-center justify-center text-sm;
+        }
+
+        .input {
+          @apply border border-gray-300 rounded w-full text-sm h-12 px-3;
+        }
+
+        .radio {
+          @apply h-5 w-5 border-2 border-gray-400 rounded-full bg-white  cursor-pointer;
+        }
+
+        .textarea {
+          @apply w-full border border-gray-300 rounded text-sm placeholder-neutral-400 p-2;
+        }
+
+        .select {
+          @apply h-12 border border-gray-300 rounded text-sm placeholder-neutral-400 pl-2 w-full;
+        }
+
+        .button-radio {
+          @apply px-3 py-2 text-sm inline-flex items-center justify-center text-gray-500 rounded-lg cursor-pointer border border-gray-300 hover:text-black hover:bg-blue-200 peer-checked:text-blue-600 peer-checked:border-blue-600 whitespace-nowrap;
+        }
+
+        .button-radio-selected {
+          @apply button-radio bg-blue-600 text-white border-blue-600;
+        }
+
+        .button-radio-checked {
+          @apply button-radio border-blue-500 bg-blue-100 text-blue-500;
+        }
+
+        .button-icon {
+          @apply flex justify-center items-center rounded-full w-8 h-8 bg-gray-100 text-gray-400;
+        }
+
+        .button-icon-selected {
+          @apply button-icon bg-blue-600 text-white font-bold;
+        }
+
+        .label {
+          @apply text-sm font-bold block;
+        }
+
+        .info {
+          @apply text-xs text-gray-400;
+        }
+
+        .description {
+          @apply text-sm text-gray-500;
+        }
+
+        .title {
+          @apply text-xl font-bold;
+        }
+
+        .topbar {
+          @apply bg-white h-14 items-center border-b flex font-bold text-lg relative;
+        }
+
+        .topbar-title {
+          @apply text-center w-full font-bold;
+        }
+
+        .tabbar {
+          @apply flex mt-4 font-bold text-center text-gray-400 text-sm;
+        }
+
+        .tabbar-tab {
+          @apply w-full pb-2 border-b whitespace-nowrap px-4;
+        }
+
+        .tabbar-tab-selected {
+          @apply w-full text-black pb-2 border-b-2 border-black whitespace-nowrap  px-4;
+        }
+
+        .badge {
+          @apply px-2 py-1 rounded-full bg-blue-100 text-xs text-blue-500 inline-block;
+        }
+        .badge-sub {
+          @apply px-2 py-1 rounded-full bg-red-100 text-xs text-red-500  inline-block;
+        }
+
+        .fixed-bottom {
+          @apply fixed bottom-0 w-full;
+        }
+
+        .fixed-button {
+          @apply fixed bottom-0 left-0 w-full font-bold flex justify-center items-center py-4 text-white bg-blue-600;
+        }
+
+        .hr {
+          @apply h-2 border-none bg-gray-100;
+        }
+
+        .notice {
+          @apply rounded w-full px-4 py-2 bg-blue-50 text-center text-blue-500 text-sm whitespace-nowrap;
+        }
+
+        .image-empty {
+          @apply rounded bg-gray-300 h-16 w-16 flex items-center justify-center text-xl font-bold text-white;
+        }
+
+        .unread {
+          @apply rounded-full flex text-right items-center justify-center w-5 h-5 bg-red-500 text-xs text-white font-bold;
+        }
+
+        .tag {
+          @apply text-sm rounded-full py-2 px-3 bg-gray-100 whitespace-nowrap;
+        }
+
+        .profile {
+          @apply w-14 h-14 rounded-full bg-gray-200 flex justify-center items-center font-bold text-white;
+        }
+
+        .splash {
+          @apply h-screen bg-blue-800 flex items-center justify-center text-3xl font-bold text-white;
+        }
+
+        .dot-selected {
+          @apply p-1 rounded-full bg-blue-600;
+        }
+
+        .dot {
+          @apply p-1 rounded-full bg-gray-300;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="topbar">
+      <button class="absolute p-4">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="gray"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="feather feather-arrow-left"
+        >
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+      </button>
+      <div class="topbar-title">상품 리뷰</div>
+    </div>
+
+    <div class="tabbar">
+      <a href="/post" class="tabbar-tab">상세 정보</a>
+      <a href="/post" class="tabbar-tab-selected">리뷰 210</a>
+    </div>
+    <div class="mx-6">
+      <div class="mt-9 flex items-center gap-5">
+        <div class="ml-4 flex flex-col items-center justify-center">
+          <div class="text-4xl font-extrabold text-center text-black">
+            4.65
+            <div class="flex mt-1 gap-0.5 text-yellow-400 justify-center items-center"></div>
+          </div>
+        </div>
+
+        <div class="bg-gray-200 h-28 w-0.5"></div>
+
+        <div class="mt-5 ml-2 pl-2.5 flex items-center">
+          <div class="flex flex-col items-center">
+            <div class="flex-col h-16">
+              <div class="bg-gray-200 rounded-t-full w-2 h-2/6"></div>
+              <div class="bg-blue-600 rounded-b-full w-2 h-4/6"></div>
+            </div>
+            <div class="text-blue-600 text-xs mt-2">5점</div>
+          </div>
+
+          <div class="ml-2.5 flex flex-col items-center">
+            <div class="flex-col h-16">
+              <div class="bg-gray-200 rounded-t-full w-2 h-4/6"></div>
+              <div class="bg-gray-300 rounded-b-full w-2 h-2/6"></div>
+            </div>
+            <div class="text-gray-300 text-xs mt-2">4점</div>
+          </div>
+          <div class="ml-2.5 flex flex-col items-center">
+            <div class="flex-col h-16">
+              <div class="bg-gray-200 rounded-t-full w-2 h-5/6"></div>
+              <div class="bg-gray-300 rounded-b-full w-2 h-1/6"></div>
+            </div>
+            <div class="text-gray-300 text-xs mt-2">3점</div>
+          </div>
+          <div class="ml-2.5 flex flex-col items-center">
+            <div class="flex-col h-16">
+              <div class="bg-gray-200 rounded-full w-2 h-full"></div>
+              <div class="bg-gray-300 rounded-b-full w-2 h-min"></div>
+            </div>
+            <div class="text-gray-300 text-xs mt-2">2점</div>
+          </div>
+          <div class="ml-2.5 flex flex-col items-center">
+            <div class="flex-col h-16">
+              <div class="bg-gray-200 rounded-full w-2 h-full"></div>
+              <div class="bg-gray-300 rounded-b-full w-2 h-min"></div>
+            </div>
+            <div class="text-gray-300 text-xs mt-2">1점</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mx-5 mt-5">
+      <div class="label">효과</div>
+      <div class="mt-2 flex items-center justify-between">
+        <div class="tag">피로 개선</div>
+
+        <div class="mt-1 font-bold text-lg">64%</div>
+      </div>
+
+      <div class="label mt-4">부작용</div>
+      <div class="mt-2 flex items-center justify-between">
+        <div class="tag">속쓰림</div>
+
+        <div class="mt-1 font-bold text-lg">2%</div>
+      </div>
+
+      <div class="label mt-4">섭취 편의성</div>
+      <div class="mt-2 flex items-center justify-between">
+        <div class="tag">알약크기 보통</div>
+
+        <div class="mt-1 font-bold text-lg">78%</div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+      ::-webkit-scrollbar {
+        display: none;
+      }
+
+      * {
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+      }
+
+      @layer components {
+        .button {
+          @apply bg-blue-600 h-12 rounded shadow text-white w-full flex items-center justify-center font-bold text-sm;
+        }
+
+        .button-outline {
+          @apply border border-blue-600 h-12 rounded shadow text-blue-600 w-full flex items-center justify-center font-bold text-sm;
+        }
+
+        .button-sm {
+          @apply px-3 py-1 h-8 flex justify-center items-center text-white font-medium bg-blue-600 rounded text-sm;
+        }
+
+        .button-sub {
+          @apply h-10 border border-black rounded shadow text-black w-full flex items-center justify-center text-sm;
+        }
+
+        .input {
+          @apply border border-gray-300 rounded w-full text-sm h-12 px-3;
+        }
+
+        .radio {
+          @apply h-5 w-5 border-2 border-gray-400 rounded-full bg-white  cursor-pointer;
+        }
+
+        .textarea {
+          @apply w-full border border-gray-300 rounded text-sm placeholder-neutral-400 p-2;
+        }
+
+        .select {
+          @apply h-12 border border-gray-300 rounded text-sm placeholder-neutral-400 pl-2 w-full;
+        }
+
+        .button-radio {
+          @apply px-3 py-2 text-sm inline-flex items-center justify-center text-gray-500 rounded-lg cursor-pointer border border-gray-300 hover:text-black hover:bg-blue-200 peer-checked:text-blue-600 peer-checked:border-blue-600 whitespace-nowrap;
+        }
+
+        .button-radio-selected {
+          @apply button-radio bg-blue-600 text-white border-blue-600;
+        }
+
+        .button-radio-checked {
+          @apply button-radio border-blue-500 bg-blue-100 text-blue-500;
+        }
+
+        .button-icon {
+          @apply flex justify-center items-center rounded-full w-8 h-8 bg-gray-100 text-gray-400;
+        }
+
+        .button-icon-selected {
+          @apply button-icon bg-blue-600 text-white font-bold;
+        }
+
+        .label {
+          @apply text-sm font-bold block;
+        }
+
+        .info {
+          @apply text-xs text-gray-400;
+        }
+
+        .description {
+          @apply text-sm text-gray-500;
+        }
+
+        .title {
+          @apply text-xl font-bold;
+        }
+
+        .topbar {
+          @apply bg-white h-14 items-center border-b flex font-bold text-lg relative;
+        }
+
+        .topbar-title {
+          @apply text-center w-full font-bold;
+        }
+
+        .tabbar {
+          @apply flex mt-4 font-bold text-center text-gray-400 text-sm;
+        }
+
+        .tabbar-tab {
+          @apply w-full pb-2 border-b whitespace-nowrap px-4;
+        }
+
+        .tabbar-tab-selected {
+          @apply w-full text-black pb-2 border-b-2 border-black whitespace-nowrap  px-4;
+        }
+
+        .badge {
+          @apply px-2 py-1 rounded-full bg-blue-100 text-xs text-blue-500 inline-block;
+        }
+        .badge-sub {
+          @apply px-2 py-1 rounded-full bg-red-100 text-xs text-red-500  inline-block;
+        }
+
+        .fixed-bottom {
+          @apply fixed bottom-0 w-full;
+        }
+
+        .fixed-button {
+          @apply fixed bottom-0 left-0 w-full font-bold flex justify-center items-center py-4 text-white bg-blue-600;
+        }
+
+        .hr {
+          @apply h-2 border-none bg-gray-100;
+        }
+
+        .notice {
+          @apply rounded w-full px-4 py-2 bg-blue-50 text-center text-blue-500 text-sm whitespace-nowrap;
+        }
+
+        .image-empty {
+          @apply rounded bg-gray-300 h-16 w-16 flex items-center justify-center text-xl font-bold text-white;
+        }
+
+        .unread {
+          @apply rounded-full flex text-right items-center justify-center w-5 h-5 bg-red-500 text-xs text-white font-bold;
+        }
+
+        .tag {
+          @apply text-sm rounded-full py-2 px-3 bg-gray-100 whitespace-nowrap;
+        }
+
+        .profile {
+          @apply w-14 h-14 rounded-full bg-gray-200 flex justify-center items-center font-bold text-white;
+        }
+
+        .splash {
+          @apply h-screen bg-blue-800 flex items-center justify-center text-3xl font-bold text-white;
+        }
+
+        .dot-selected {
+          @apply p-1 rounded-full bg-blue-600;
+        }
+
+        .dot {
+          @apply p-1 rounded-full bg-gray-300;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="relative">
+      <div class="w-full h-60 bg-gray-300 text-white font-bold flex justify-center items-center text-5xl">fingr</div>
+
+      <button class="absolute top-4 left-4">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="white"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="feather feather-arrow-left"
+        >
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+      </button>
+      <div class="absolute top-4 right-4 text-white">
+        <button class="mr-2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-bookmark"
+          >
+            <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+          </svg>
+        </button>
+        <button>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-share-2"
+          >
+            <circle cx="18" cy="5" r="3"></circle>
+            <circle cx="6" cy="12" r="3"></circle>
+            <circle cx="18" cy="19" r="3"></circle>
+            <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+            <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+          </svg>
+        </button>
+      </div>
+
+      <div class="absolute bottom-4 left-4 bg-gray-500 px-2 py-1 rounded-full">
+        <div class="text-white text-sm">1 / 2</div>
+      </div>
+    </div>
+
+    <div class="p-4 flex flex-col gap-2">
+      <div class="text-sm text-gray-500">광주 서구 | 댄스연습실, 음악연습실, 촬영공간</div>
+      <div class="text-lg font-bold">컨셉 연습실(Concept Studio)</div>
+      <div class="flex gap-2">
+        <button class="flex items-center">
+          <div class="flex gap-1 items-center">
+            <img class="w-3 h-3" src="https://whvntffyxprmvalmnwnb.supabase.co/storage/v1/object/public/app/f4103169-9d69-42fd-a0a9-c1c7f910c165.png" />
+            <div class="text-sm font-bold">5.0</div>
+          </div>
+        </button>
+        <button class="flex items-center text-blue-500 gap-1">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="12"
+            height="12"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-map-pin"
+          >
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+          <div class="text-xs">위치보기</div>
+        </button>
+      </div>
+      <div class="badge w-24 text-center">승인 후 예약</div>
+    </div>
+
+    <div class="bg-gray-200 space-y-4 p-4">
+      <a href="" class="p-4 rounded-xl flex gap-4 bg-white">
+        <div class="image-empty w-24 h-24">fingr</div>
+        <div class="flex-1 text-sm">
+          <div class="font-bold text-base">비밀의 방</div>
+          <div class="text-gray-500 text-sm mt-1">최대 7명﹒기준 1명</div>
+          <div class="text-gray-500 text-sm">7평</div>
+          <div class="text-right text-lg font-bold">6,000원/시간</div>
+        </div>
+      </a>
+      <a href="" class="p-4 rounded-xl flex gap-4 bg-white">
+        <div class="image-empty w-24 h-24">fingr</div>
+        <div class="flex-1 text-sm">
+          <div class="font-bold text-base">비밀의 방</div>
+          <div class="text-gray-500 text-sm mt-1">최대 7명﹒기준 1명</div>
+          <div class="text-gray-500 text-sm">7평</div>
+          <div class="text-right text-lg font-bold">6,000원/시간</div>
+        </div>
+      </a>
+    </div>
+    <div class="p-4">
+      <div class="font-bold mb-1">영업 시간</div>
+      <div class="description">00:00 ~ 24:00</div>
+
+      <div class="font-bold mt-4 mb-1">공간 소개</div>
+      <div class="description">1. 사용안내 <br />2. 기재된 스케줄표를 확인합니다.</div>
+
+      <div class="font-bold mt-4 mb-1">편의시설</div>
+      <div class="flex gap-2 flex-wrap">
+        <div class="button-radio rounded-full">24시간 운영</div>
+        <div class="button-radio rounded-full">CCTV</div>
+        <div class="button-radio rounded-full">WIFI</div>
+        <div class="button-radio rounded-full">화장실</div>
+        <div class="button-radio rounded-full">정수기</div>
+      </div>
+    </div>
+
+    <img
+      class="h-52 w-full object-cover mb-20"
+      src="https://whvntffyxprmvalmnwnb.supabase.co/storage/v1/object/public/app/563c642f-d8ba-41c5-99bf-95159f652cb5.png"
+    />
+
+    <div class="fixed-bottom flex gap-2 p-2 bg-white">
+      <button class="button-outline w-14">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="feather feather-message-square"
+        >
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+        </svg>
+      </button>
+
+      <button class="button">예약하기</button>
+    </div>
+  </body>
+</html>

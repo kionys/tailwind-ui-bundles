@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+      ::-webkit-scrollbar {
+        display: none;
+      }
+
+      * {
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+      }
+
+      @layer components {
+        .button {
+          @apply bg-blue-600 h-12 rounded shadow text-white w-full flex items-center justify-center font-bold text-sm;
+        }
+
+        .button-outline {
+          @apply border border-blue-600 h-12 rounded shadow text-blue-600 w-full flex items-center justify-center font-bold text-sm;
+        }
+
+        .button-sm {
+          @apply px-3 py-1 h-8 flex justify-center items-center text-white font-medium bg-blue-600 rounded text-sm;
+        }
+
+        .button-sub {
+          @apply h-10 border border-black rounded shadow text-black w-full flex items-center justify-center text-sm;
+        }
+
+        .input {
+          @apply border border-gray-300 rounded w-full text-sm h-12 px-3;
+        }
+
+        .radio {
+          @apply h-5 w-5 border-2 border-gray-400 rounded-full bg-white  cursor-pointer;
+        }
+
+        .textarea {
+          @apply w-full border border-gray-300 rounded text-sm placeholder-neutral-400 p-2;
+        }
+
+        .select {
+          @apply h-12 border border-gray-300 rounded text-sm placeholder-neutral-400 pl-2 w-full;
+        }
+
+        .button-radio {
+          @apply px-3 py-2 text-sm inline-flex items-center justify-center text-gray-500 rounded-lg cursor-pointer border border-gray-300 hover:text-black hover:bg-blue-200 peer-checked:text-blue-600 peer-checked:border-blue-600 whitespace-nowrap;
+        }
+
+        .button-radio-selected {
+          @apply button-radio bg-blue-600 text-white border-blue-600;
+        }
+
+        .button-radio-checked {
+          @apply button-radio border-blue-500 bg-blue-100 text-blue-500;
+        }
+
+        .button-icon {
+          @apply flex justify-center items-center rounded-full w-8 h-8 bg-gray-100 text-gray-400;
+        }
+
+        .button-icon-selected {
+          @apply button-icon bg-blue-600 text-white font-bold;
+        }
+
+        .label {
+          @apply text-sm font-bold block;
+        }
+
+        .info {
+          @apply text-xs text-gray-400;
+        }
+
+        .description {
+          @apply text-sm text-gray-500;
+        }
+
+        .title {
+          @apply text-xl font-bold;
+        }
+
+        .topbar {
+          @apply bg-white h-14 items-center border-b flex font-bold text-lg relative;
+        }
+
+        .topbar-title {
+          @apply text-center w-full font-bold;
+        }
+
+        .tabbar {
+          @apply flex mt-4 font-bold text-center text-gray-400 text-sm;
+        }
+
+        .tabbar-tab {
+          @apply w-full pb-2 border-b whitespace-nowrap px-4;
+        }
+
+        .tabbar-tab-selected {
+          @apply w-full text-black pb-2 border-b-2 border-black whitespace-nowrap  px-4;
+        }
+
+        .badge {
+          @apply px-2 py-1 rounded-full bg-blue-100 text-xs text-blue-500 inline-block;
+        }
+        .badge-sub {
+          @apply px-2 py-1 rounded-full bg-red-100 text-xs text-red-500  inline-block;
+        }
+
+        .fixed-bottom {
+          @apply fixed bottom-0 w-full;
+        }
+
+        .fixed-button {
+          @apply fixed bottom-0 left-0 w-full font-bold flex justify-center items-center py-4 text-white bg-blue-600;
+        }
+
+        .hr {
+          @apply h-2 border-none bg-gray-100;
+        }
+
+        .notice {
+          @apply rounded w-full px-4 py-2 bg-blue-50 text-center text-blue-500 text-sm whitespace-nowrap;
+        }
+
+        .image-empty {
+          @apply rounded bg-gray-300 h-16 w-16 flex items-center justify-center text-xl font-bold text-white;
+        }
+
+        .unread {
+          @apply rounded-full flex text-right items-center justify-center w-5 h-5 bg-red-500 text-xs text-white font-bold;
+        }
+
+        .tag {
+          @apply text-sm rounded-full py-2 px-3 bg-gray-100 whitespace-nowrap;
+        }
+
+        .profile {
+          @apply w-14 h-14 rounded-full bg-gray-200 flex justify-center items-center font-bold text-white;
+        }
+
+        .splash {
+          @apply h-screen bg-blue-800 flex items-center justify-center text-3xl font-bold text-white;
+        }
+
+        .dot-selected {
+          @apply p-1 rounded-full bg-blue-600;
+        }
+
+        .dot {
+          @apply p-1 rounded-full bg-gray-300;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="topbar">
+      <button class="absolute p-4">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="gray"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="feather feather-arrow-left"
+        >
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+      </button>
+      <div class="topbar-title">선호 일정 등록</div>
+    </div>
+
+    <form class="relative">
+      <div class="px-5 py-4 flex flex-col items-center">
+        <!-- 교육 시작일 -->
+        <div class="w-full py-4 flex justify-between items-center text-xs border-b">
+          <div class="text-gray-700">교육 시작일</div>
+          <button type="button" class="button-sm gap-1">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="feather feather-calendar"
+            >
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+            2022.12.01
+          </button>
+        </div>
+        <!-- 교육 요일 -->
+        <div class="w-full py-4 flex flex-col gap-3 text-xs border-b">
+          <div class="text-gray-700">교육 요일</div>
+          <!-- Info: 체크박스로 수정 필요 -->
+          <div class="grid grid-cols-7 gap-2">
+            <div class="button-icon w-10 h-10">월</div>
+            <div class="button-icon w-10 h-10">화</div>
+            <div class="button-icon w-10 h-10">수</div>
+            <div class="button-icon w-10 h-10">목</div>
+            <div class="button-icon w-10 h-10 bg-blue-600 text-white">금</div>
+            <div class="button-icon w-10 h-10">토</div>
+            <div class="button-icon w-10 h-10">일</div>
+          </div>
+        </div>
+        <!-- 시작 시간 / 종료 시간 / 설정한 시간 리스트 -->
+        <div class="w-full py-6 flex flex-col text-xs border-b">
+          <!-- 시작 시간, 종료 시간 -->
+          <div class="mb-5 grid grid-cols-2 gap-3">
+            <div class="flex flex-col gap-2">
+              <span class="text-gray-600">시작 시간</span>
+              <div class="button-radio-checked">오후 2:00</div>
+            </div>
+            <div class="flex flex-col gap-2">
+              <span class="text-gray-600">종료 시간</span>
+              <div class="button-radio-checked">오후 4:00</div>
+            </div>
+          </div>
+          <!-- 설정한 시간 리스트 -->
+          <div class="p-4 flex gap-3 text-xs border border-gray-300 rounded">
+            <div class="text-gray-700">금요일</div>
+            <div class="flex flex-col gap-3">
+              <div class="text-gray-600">오후 2:00 - 오후 4:00</div>
+              <button type="button" class="text-blue-600 text-left">+ 시간 추가/수정</button>
+            </div>
+          </div>
+        </div>
+        <!-- 이 일정으로 얼마 동안 일할 수 있나요? -->
+        <div class="w-full py-6 flex flex-col gap-3 text-xs">
+          <div class="text-gray-700">이 일정으로 얼마 동안 일할 수 있나요?</div>
+          <!-- Info: 체크박스로 수정 필요 -->
+          <div class="grid grid-cols-4 gap-2">
+            <div class="button-radio-selected border-blue-600">1주일</div>
+            <div class="button-radio">1개월</div>
+            <div class="button-radio">3개월</div>
+            <div class="button-radio">6개월</div>
+          </div>
+          <div class="info">활동 시작일로부터 1주일 후, 내 프로필이 비공개로 변경됩니다.</div>
+        </div>
+      </div>
+
+      <!-- 하단 -->
+      <button type="submit" class="fixed-button">다음</button>
+    </form>
+  </body>
+</html>
